@@ -7,8 +7,7 @@ def main():
 
     # print("JSON-muotoinen vastaus:")
     # print(response)
-
-    print(response)
+    # print(response)
     players = []
 
     for player_dict in response:
@@ -20,8 +19,6 @@ def main():
         )
 
         players.append(player)
-
-    print("Oliot:")
 
     for player in players:
         print(player)
