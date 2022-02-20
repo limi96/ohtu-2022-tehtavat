@@ -29,16 +29,16 @@ class Ostoskori:
 
     def lisaa_tuote(self, lisattava: Tuote):
         # lisää tuotteen
-        ostos = Ostos(lisattava)
 
         uusi_lisays = False
 
         for ostos_korissa in self.kori: 
-            if ostos_korissa.tuote == lisattava:
-                ostos.muuta_lukumaaraa(1)
+            if ostos_korissa.tuotteen_nimi() == lisattava.nimi():
+                ostos_korissa.muuta_lukumaaraa(1)
                 uusi_lisays = True
         
         if not uusi_lisays: 
+            ostos = Ostos(lisattava)
             self.kori.append(ostos)
 
 
