@@ -1,6 +1,8 @@
 from entities.user import User
-import re
-from repositories.user_repository import UserRepository
+from repositories.user_repository import (
+    user_repository as default_user_repository
+)
+
 
 class UserInputError(Exception):
     pass
@@ -11,7 +13,7 @@ class AuthenticationError(Exception):
 
 
 class UserService:
-    def __init__(self, user_repository):
+    def __init__(self, user_repository=default_user_repository):
         self._user_repository = user_repository
 
     def check_credentials(self, username, password):
@@ -25,8 +27,8 @@ class UserService:
 
         return user
 
-    def create_user(self, username, password):
-        self.validate(username, password)
+    def create_user(self, username, password, password_confirmation):
+        self.validate(username, password, password_confirmation)
 
         user = self._user_repository.create(
             User(username, password)
@@ -34,23 +36,11 @@ class UserService:
 
         return user
 
-    def validate(self, username, password):
+    def validate(self, username, password, password_confirmation):
         if not username or not password:
             raise UserInputError("Username and password are required")
 
         # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
 
-        if re.search("^[a-z]+$", username) is None:
-            raise UserInputError("Username can only contain letters a-z")
 
-        if len(username) < 3: 
-            raise UserInputError("Username is too short")
-
-        if len(password) < 8:
-            raise UserInputError("Password is too short")
-
-        if UserRepository.find_by_username(self._user_repository, username) is not None: 
-            raise UserInputError("Username is already taken")
-        
-        if re.search("[^a-z]$", password) is None:
-            raise UserInputError("Password must not contain only letters")
+user_service = UserService()
