@@ -27,7 +27,7 @@ Register With Valid Username And Too Short Password
     Register Should Fail With Message  Password is too short
 
 Register With Nonmatching Password And Password Confirmation
-    Set Username  kallekalle
+    Set Username  kallekallekalle
     Set Password  kalle123123444444444444
     Set Password Confirm  kalle123123
     Click Register Button
