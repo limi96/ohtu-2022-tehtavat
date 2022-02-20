@@ -42,7 +42,7 @@ class TestKauppa(unittest.TestCase):
         pankki_mock.tilisiirto.assert_called()
         # toistaiseksi ei välitetä kutsuun liittyvistä argumenteista
 
-    def test_osta(self): 
+    def test_kaksi_tuotetta_oikea_asiakas_tilinumero_summa(self): 
         pankki_mock = Mock()
         viitegeneraattori_mock = Mock()
 
