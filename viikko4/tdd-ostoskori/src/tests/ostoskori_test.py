@@ -104,7 +104,14 @@ class TestOstoskori(unittest.TestCase):
 
     # step 14
     def test_Jos_koriin_on_lisatty_tuote_ja_sama_tuote_poistetaan_on_kori_taman_jalkeen_tyhja(self):
-        pass
+        self.kori.lisaa_tuote(self.kurkku)
+        self.kori.poista_tuote(self.kurkku)
+
+        ostokset = self.kori.ostokset()
+
+        self.assertEqual(self.kori.tavaroita_korissa(), 0)
+        self.assertEqual(self.kori.hinta(), 0)
+        self.assertEqual(len(ostokset), 0)
 
     # step 15
     def test_Metodi_tyhjenna_tyhjentaa_korin(self):
