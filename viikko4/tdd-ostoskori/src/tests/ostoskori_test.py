@@ -20,30 +20,39 @@ class TestOstoskori(unittest.TestCase):
         self.assertEqual(self.kori.tavaroita_korissa(), 1)
     
     # step 3
-    def test_yhden_tuotteen_lisäämisen_jälkeen_ostoskorin_hinta_on_sama_kuin_tuotteen_hinta(self):
+    def test_yhden_tuotteen_lisaamisen_jalkeen_ostoskorin_hinta_on_sama_kuin_tuotteen_hinta(self):
         self.kori.lisaa_tuote(self.maito)
         self.assertEqual(self.kori.hinta(), 3)
     
     # step 4
-    def test_kahden_eri_tuotteen_lisaamisen_jalkeen_ostoskorissa_kaksi_tavaraa(self):
+    def test_kahden_eri_tuotteen_lisaamisen_jalkeen_ostoskorissa_2_tavaraa(self):
         self.kori.lisaa_tuote(self.maito)
         self.kori.lisaa_tuote(self.kurkku)
         self.assertEqual(self.kori.tavaroita_korissa(), 2)
     
     # step 5
-    def test_kahden_eri_tuotteen_lisäämisen_jälkeen_ostoskorin_hinta_on_sama_kuin_tuotteiden_hintojen_summa(self):
+    def test_kahden_eri_tuotteen_lisaamisen_jalkeen_ostoskorin_hinta_on_sama_kuin_tuotteiden_hintojen_summa(self):
         self.kori.lisaa_tuote(self.maito)
         self.kori.lisaa_tuote(self.kurkku)
         self.assertEqual(self.kori.hinta(), 13)
 
     # step 6
-    def test_kahden_saman_tuotteen_lisaamisen_jalkeen_ostoskorissa_kaksi_tavaraa(self):
+    def test_kahden_saman_tuotteen_lisaamisen_jalkeen_ostoskorissa_on_2_tavaraa(self):
         self.kori.lisaa_tuote(self.kurkku)
         self.kori.lisaa_tuote(self.kurkku)
         self.assertEqual(self.kori.tavaroita_korissa(), 2)
 
-    # step 
-    # step 
+    # step 7
+    def test_kahden_saman_tuotteen_lisaamisen_jalkeen_ostoskorin_hinta_on_sama_kuin_2_kertaa_tuotteen_hinta(self):
+        self.kori.lisaa_tuote(self.kurkku)
+        self.kori.lisaa_tuote(self.kurkku)
+        # self.assertEqual(self.kori.hinta(), 20)
+        self.assertEqual(self.kori.hinta(), 2 * self.kurkku.hinta())
+    
+    # step 8
+    def test_yhden_tuotteen_lisaamisen_jalkeen_ostoskori_sisaltaa_yhden_ostoksen(self):
+        pass
+
     # step 
     # step 
     # step 
