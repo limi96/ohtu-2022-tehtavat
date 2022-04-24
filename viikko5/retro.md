@@ -1,0 +1,5 @@
+Artikkeleissa käsitellään retrosospektiivitekniikoita, joiden tarkoituksena on pohtia ryhmätyöskentelyn toimivuutta ja käydä läpi parannusehdotuksia
+
+Glad Sad Mad -tekniikassa tiimin jäsenet kirjoittavat kukin yksin omia ajatuksiaan ajatuksiaan yhteiseen tauluun, jotka jaotellaan menetelmän nimen mukaisiin alaotsikkoihin: “Glad”, “Sad” ja “Mad”. Tämän jälkeen käydään läpi, mitä eri alaotsikkoihin on kirjoitettu jakamalla mainitut asiat aihepiireittäin. Tarkoituksena on siis, että tiimin jäsenet pääsevät keskustelemaan siitä, mikä työskentelyssä ilahdutti, suretti ja turhautti.
+
+Start, Stop, Continue, More of, Less of Wheel -tekniikassa jaetaan taulu viiteen eri ympyrään, jotka on jaettu tekniikan nimen mukaisiin alaotsikkoihin. Tarkoituksena on käydä yhdessä tiimin kanssa läpi alaotsikoiden avulla tiimin työskentelyn sujuvuutta ja ongelmakohtia. “Start”, “Stop”, “Continue” kuvaavat nimensä mukaisesti asioita, joita tiimin kannattaisi aloittaa, lopettaa tai jatkaa tulevissa ryhmätyöskentelyissä. “More of” ja “Less Of” kuvaavat myös nimensä mukaisesti niitä asioita, joita kannattaisi lisätä tai vähentää ryhmätyöskentelyssä.
