@@ -36,7 +36,7 @@ class HasFewerThan:
         return player_value < self._value
 
 class All:    
-    def matches(self, placeholder):
+    def matches(self, *placeholder):
         return True
 
 class Not: 
@@ -57,20 +57,3 @@ class Or:
             if matcher.matches(player):
                 return True
         return False
-
-
-class QueryBuilder:
-    def __init__(self, matcher = All()):
-        self._matcher = matcher
-    
-    def hasAtLeast(self, value, attr):
-        return QueryBuilder(matcher=And(self._matcher, HasAtLeast(value, attr)))
-
-    def hasFewerThan(self, value, attr):
-        return QueryBuilder(matcher=And(self._matcher, HasFewerThan(value, attr)))
-
-    def playsIn(self, team):
-        return QueryBuilder(matcher=And(self._matcher, PlaysIn(team)))
-
-    def build(self): 
-        return self._matcher
